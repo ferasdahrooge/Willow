@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="ISO-8859-1">
+    <title>List Users</title>
+    <link rel="stylesheet" type="text/css" href="/webjars/bootstrap/css/bootstrap.min.css" />
+    <script type="text/javascript" src="/webjars/jquery/jquery.min.js"></script>
+    <script type="text/javascript" src="/webjars/bootstrap/js/bootstrap.min.js"></script>
+</head>
+<body>
+    button
+<div class="container text-center">
+    <div>
+        <form th:action="@{/logout}" method="post">
+            <p>
+                Welcome <b>[[${#request.userPrincipal.principal.fullName}]]</b>
+            </p>
+            <input type="submit" value="Sign Out" />
+        </form>
+    </div>
+
+    <div>
+
+        <h3><a th:href="@{api/v1/property/viewalllistings}">View all listings</a></h3>
+
+        <form th:action="@{api/v1/property/viewalisting}"
+            method="get" style="max-width: 600px; margin: 0 auto;">
+            <div class="m-3">
+                <div class="form-group row">
+                    <label class="col-4 col-form-label">MLS: </label>
+                    <div class="col-8">
+                        <input type="number" id="mls" name="mls" class="form-control" required />
+                        <button type="submit" class="btn btn-primary">View The Listing</button>
+                    </div>
+                </div> 
+            </div>
+        </form>
+
+        <form th:action="@{api/v1/user/addtofavourites}" method="get" style="max-width: 600px; margin: 0 auto;">
+            <div class="m-3">
+                <div class="form-group row">
+                    <label class="col-4 col-form-label">MLS: </label>
+                    <div class="col-8">
+                        <input type="number" id="mls" name="mls" class="form-control" required />
+                        <button type="submit" class="btn btn-primary">Add to Favourites</button>
+                    </div>
+                </div> 
+            </div>
+        </form>
+
+        <form th:action="@{api/v1/user/removefromfavourites}" method="get" style="max-width: 600px; margin: 0 auto;">
+            <div class="m-3">
+                <div class="form-group row">
+                    <label class="col-4 col-form-label">MLS: </label>
+                    <div class="col-8">
+                        <input type="number" id="mls" name="mls" class="form-control" required />
+                        <button type="submit" class="btn btn-primary">Remove From Favourites</button>
+                    </div>
+                </div> 
+            </div>
+        </form>
+
+        <h3><a th:href="@{api/v1/property/add}">List new property</a></h3> <!-- connect with user, must be in a predefined neighbourhood, build up price history -->
+
+
+
+        <form th:action="@{api/v1/property/remove}" method="get" style="max-width: 600px; margin: 0 auto;">
+            <div class="m-3">
+                <div class="form-group row">
+                    <label class="col-4 col-form-label">MLS: </label>
+                    <div class="col-8">
+                        <input type="number" id="mls" name="mls" class="form-control" required />
+                        <button type="submit" class="btn btn-primary">Remove Listing</button>
+                    </div>
+                </div> 
+            </div>
+        </form>
+
+        <form th:action="@{api/v1/property/update}" method="get" style="max-width: 600px; margin: 0 auto;">
+            <div class="m-3">
+                <div class="form-group row">
+                    <label class="col-4 col-form-label">MLS: </label>
+                    <div class="col-8">
+                        <input type="number" id="mls" name="mls" class="form-control" required />
+                    </div>
+                    <label class="col-4 col-form-label">New Price: </label>
+                    <div class="col-8">
+                        <input type="number" id="newprice" name="newprice" class="form-control" required />
+                        <button type="submit" class="btn btn-primary">Update Price</button>
+                    </div>
+                </div> 
+            </div>
+        </form>
+
+
+        <form th:action="@{api/v1/pricehistory/viewpricehistory}" method="get" style="max-width: 600px; margin: 0 auto;">
+            <div class="m-3">
+                <div class="form-group row">
+                    <label class="col-4 col-form-label">MLS: </label>
+                    <div class="col-8">
+                        <input type="number" id="mls" name="mls" class="form-control" required />
+                        <button type="submit" class="btn btn-primary">View Price History</button>
+                    </div>
+                </div> 
+            </div>
+        </form>
+
+    </div>
+    
+</div>
+</body>
+</html>

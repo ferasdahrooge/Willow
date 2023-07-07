@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<html xmlns:th="http://www.thymeleaf.org"></html>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Willow</title>
+    <link th:href="@{/css/design.css}" rel="stylesheet" />
+    <link th:href= "@{/css/pics/favicon.png}" rel="shortcut icon" type="image/png"/>
+    <script src="get_input.js" defer></script>
+</head>
+<body>
+    <div class="header">
+        <div class="top-left">
+            <ul class="head">
+                <li><a th:href="@{/printalllistings}">Buy</a> </li>
+                <li><a th:href="@{api/v1/property/add}">Sell</a></li>
+            </ul>
+        </div>
+        <div class="logo">
+            <img class="logopic" th:src="@{/css/pics/logo.png}" alt="project logo">
+            <div class="willow"><a th:href="@{/}">Willow</a></div>
+        </div>
+        <div class="top-right">
+            <ul class="head">
+                <li><a th:href="@{/favorites}">My Favorites</a> </li>
+                <li><a th:href="@{/my_listings}">My Listings</a></li>
+                <div class="dropdown" style="float: right;">
+                    <button class="pp"></button>
+                    <div class="dropdown-content">
+                        <a th:href="@{/login}">Log In</a>
+                        <a th:href="@{/register}">Register</a>
+                    </div>
+                </div>
+            </ul>
+        </div>
+    </div>
+    <div class="center1">
+        <h1>Let's Find Your Dream Home</h1>
+        <div class="col-8">
+            <input type="number" id="mls" name="mls" class="form-control" placeholder="Enter MLS of Property" 
+            style="height: 45px; width: 500px;" required />
+            <button type="submit" class="btn btn-primary" style="height: 51px; margin-left: -4px; ">🔎</button>
+        </div>
+    </div>
+    <div class="center2">
+        <div class="banner">Featured Homes </div>
+        <div class="propmatrix">
+            <div class="card">
+                <img class="housepic" th:src="@{/css/pics/van.jpg}" alt="House1">
+                <div class="container">
+                    <h4>CA$31,880,800</h4>
+                    <div class="attributes">
+                        <div>3 🛏️</div>
+                        <div>5 🛀</div>
+                        <div>Condo</div>
+                    </div>
+                    <div>PH1 1550 ALBERNI STREET, Vancouver, BC</div>
+                </div>
+            </div>
+            <div class="card">
+                <img class="housepic" th:src="@{/css/pics/tor.jpg}" alt="House2">
+                <div class="container">
+                    <h4>CA$3,750,000</h4>
+                    <div class="attributes">
+                        <div>3 🛏️</div>
+                        <div>3 🛀</div>
+                        <div>Condo</div>
+                    </div>
+                    <div class="addr">#PH05 15 FORT YORK BLVD, Toronto, ON</div>
+                </div>
+            </div>
+            <div class="card">
+                <img class="housepic" th:src="@{/css/pics/calg.jpg}" alt="House3">
+                <div class="container">
+                    <h4>CA$499,900</h4>
+                    <div class="attributes">
+                        <div>3 🛏️</div>
+                        <div>2 🛀</div>
+                        <div>House</div>
+                    </div>
+                    <div>180 Gordon Drive SW, Calgary, AB</div>
+                </div>
+            </div>
+            <div class="card">
+                <img class="housepic" th:src="@{/css/pics/sask.jpg}" alt="House4">
+                <div class="container">
+                    <h4>CA$1,275,000</h4>
+                    <div class="attributes">
+                        <div>6 🛏️</div>
+                        <div>4 🛀</div>
+                        <div>House</div>
+                    </div>
+                    <div>3409 Ortona STREET, Saskatoon, SK</div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div>
+        <div class="banner">Testimonials</div>
+        <ul class="reviews">
+            <li>"Wow, what an incredible website!!!!!"</li>
+            <li>"Very original idea, not a copycat at all"</li>
+            <li>"Hello CMG support?"</li>
+        </ul>
+    </div>
+    <div class="footer">
+        Willow
+    </div>
+</body>
+</html>
